@@ -35,7 +35,8 @@ class DemoAViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         let w = self.view.frame.size.width;
         let h = self.view.frame.size.height;
-        swipe?.frame = CGRect(x: w * 0.1, y: h * 0.1, width: w * 0.8, height: h * 0.4)
+        
+        swipe?.frame = CGRect(x: (w - (h * 0.4)) * 0.5, y: (h - (h * 0.4)) * 0.5, width: h * 0.4, height: h * 0.4)
     }
 
 }
