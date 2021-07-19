@@ -10,30 +10,16 @@
 *** github_username, repo_name, twitter_handle, email
 -->
 
-
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="/images/login.png" alt="My cool logo" width="220" height="120"/>
+    <img src="/images/imenu.gif" width="30%" height="30%"/>
   </a>
 
-  <h3 align="center">iLogin</h3>
+  <h3 align="center">iMenu</h3>
 
   <p align="center">
-     iLogin is a quick and easy way to add a Login/Signup UX to your iOS app.
   </p>
 </p>
 
@@ -59,13 +45,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-iLogin is a quick and easy way to add a Login/Signup UX to your iOS app.
-<table  border="0" >
-  <tr>
-    <td>Login</td>
-    <td><img src="/images/login.png" width=220 height=120></td>
-  </tr>
- </table>
+iMenu is a quick and easy way to add food menu to your iOS app.
+
+* Encompass over 66 Thailand cities
+* Access over 200,000 restaurants/menus
+* Access over 1,000,000 images
+
 
 
 ### Built With
@@ -90,7 +75,7 @@ Required software and how to install them.
 
 1. Add to Podfile
 ```sh
-    pod 'BPod', :git => 'https://github.com/jalajoninc/BPod.git'
+    pod 'iMenu', :git => 'https://github.com/nativejong/iMenu.git'
 ```
 2. Install this pod
 ```sh
@@ -104,24 +89,24 @@ Required software and how to install them.
 
 4. Import the library (header's file)
 ```sh
-    @import iLogin;
+    @import iMenu;
 ```
 
 5. Declare the library (header's file)
 ```sh
-    @property (nonatomic, strong) iLogin *myFrame;
+    @property (nonatomic, strong) iMenu *myFrame;
 ```
 
-6. Initialize iLogin Framework
+6. Initialize iMenu Framework
 ```sh
     CGRect rect = CGRectMake( 0.0, 0.0,  159.0,  300.0 );
-    self.myFrame = [[iLogin alloc] initWithFrame:rect];
+    self.myFrame = [[iMenu alloc] initWithFrame:rect];
     [self.view addSubview:self.myFrame];
 ```
 
 7. Monitor iLogin activities
 ```sh
-    [self.login watchAction:1 login:^BOOL(NSString *usr, NSString *pwd) {
+    [self.iMenu watchAction:1 login:^BOOL(NSString *usr, NSString *pwd) {
         NSLog( @"forget : %@ %@", usr, pwd );
         return( false );
     } reg:^BOOL(NSString *name, NSString *phone) {
@@ -141,16 +126,15 @@ Required software and how to install them.
 
 8. Monitor iLogin activities in swift
 ```sh
-        login?.watchAction(1, login: { ( usr : String?, pwd : String?) -> Bool in
-            return false
-        }, reg: { (name : String?, phone : String?) -> Bool in
-            return false
-        }, forget: { (phone : String?) -> Bool in
-            return false
-        }, createPwd: { (pwd : String?) -> Bool in
-            return false
-        }, verify: { (code : String?) -> Bool in
-            return false
+        self.menu?.watch(true, city: { (a : [AnyHashable : Any]) in
+            self.homeBtn?.isHidden = false
+
+        }, shop: { (b : [AnyHashable : Any]) in
+            self.homeBtn?.isHidden = false
+
+        }, menu: { ( c : [AnyHashable : Any]) in
+            self.homeBtn?.isHidden = false
+
         })
 ```
 
