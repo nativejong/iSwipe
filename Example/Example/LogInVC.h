@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@import iLogin;
+@import iSwipe;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LogInVC : UIViewController
-@property (nonatomic, strong) iLogin *login;
+@property (nonatomic, strong) iSwipe *login;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.login = [[iLogin alloc] initWithFrame:CGRectZero];
+    self.login = [[iSwipe alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.login];
     
     [self watchLogin];
