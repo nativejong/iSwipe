@@ -1,0 +1,21 @@
+PODS:
+  - iSwipe (1.1.1)
+
+DEPENDENCIES:
+  - iSwipe (from `https://github.com/nativejong/iSwipe.git`)
+
+EXTERNAL SOURCES:
+  iSwipe:
+    :git: https://github.com/nativejong/iSwipe.git
+
+CHECKOUT OPTIONS:
+  iSwipe:
+    :commit: dfdcc2913ecbab02daeb543e9593ab9efef5ae3c
+    :git: https://github.com/nativejong/iSwipe.git
+
+SPEC CHECKSUMS:
+  iSwipe: 2c95a025d1d8828490f93adfe5b16a4b66df95b2
+
+PODFILE CHECKSUM: 79a25bf42eb09bc686533add69793b8d7f8fff8b
+
+COCOAPODS: 1.9.3
