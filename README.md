@@ -17,7 +17,7 @@
     <img src="/images/imenu.gif" width="30%" height="30%"/>
   </a>
 
-  <h3 align="center">iMenu</h3>
+  <h3 align="center">iSwipe</h3>
 
   <p align="center">
   </p>
@@ -45,7 +45,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-iMenu is a quick and easy way to add food menu to your iOS app.
+iSwipe is a quick and easy way to add food menu to your iOS app.
 
 * Encompass over 66 Thailand cities
 * Access over 200,000 restaurants/menus
@@ -75,7 +75,7 @@ Required software and how to install them.
 
 1. Add to Podfile
 ```sh
-    pod 'iMenu', :git => 'https://github.com/nativejong/iMenu.git'
+    pod 'iSwipe', :git => 'https://github.com/nativejong/iSwipe.git'
 ```
 2. Install this pod
 ```sh
@@ -89,53 +89,33 @@ Required software and how to install them.
 
 4. Import the library (header's file)
 ```sh
-    @import iMenu;
+    @import iSwipe;
 ```
 
 5. Declare the library (header's file)
 ```sh
-    @property (nonatomic, strong) iMenu *myFrame;
+    @property (nonatomic, strong) iSwipe *swipe;
 ```
 
-6. Initialize iMenu Framework
+6. Initialize iSwipe Framework
 ```sh
     CGRect rect = CGRectMake( 0.0, 0.0,  159.0,  300.0 );
-    self.myFrame = [[iMenu alloc] initWithFrame:rect];
-    [self.view addSubview:self.myFrame];
+    self.swipe = [[iSwipe alloc] initWithFrame:rect];
+    [self.view addSubview:self.swipe];
 ```
 
 7. Monitor iLogin activities
 ```sh
-    [self.iMenu watchAction:1 login:^BOOL(NSString *usr, NSString *pwd) {
-        NSLog( @"forget : %@ %@", usr, pwd );
-        return( false );
-    } reg:^BOOL(NSString *name, NSString *phone) {
-        NSLog( @"forget : %@ %@", name, phone );
-        return( false );
-    } forget:^BOOL(NSString *phone) {
-        NSLog( @"forget : %@", phone );
-        return( false );
-    } createPwd:^BOOL(NSString *pwd) {
-        NSLog( @"forget : %@", pwd );
-        return( false );
-    } verify:^BOOL(NSString *code) {
-        NSLog( @"forget : %@", code );
-        return( false );
+    [self.swipe watch:true currentValue:^void(CGFloat value) {
+        NSLog( @"forget : %f", value );
     }];
 ```
 
 8. Monitor iLogin activities in swift
 ```sh
-        self.menu?.watch(true, city: { (a : [AnyHashable : Any]) in
-            self.homeBtn?.isHidden = false
-
-        }, shop: { (b : [AnyHashable : Any]) in
-            self.homeBtn?.isHidden = false
-
-        }, menu: { ( c : [AnyHashable : Any]) in
-            self.homeBtn?.isHidden = false
-
-        })
+    swipe?.watch(false, currentValue: { ( value : CGFloat )  in
+        print( "value : \(value)"  )
+    })
 ```
 
 
@@ -164,16 +144,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=flat-square
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=flat-square
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=flat-square
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=flat-square
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
 [product-screenshot]: images/screenshot.png
