@@ -1,0 +1,6 @@
+framework module iSwipe {
+  umbrella header "iSwipe.h"
+
+  export *
+  module * { export * }
+}
