@@ -7,30 +7,30 @@
 //
 
 import UIKit
-import iLogin
+import iSwipe
 
 class DemoAViewController: UIViewController {
-    var login : iLogin?
+    var login : iSwipe?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = []
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        login = iLogin(frame: CGRect.zero)
+        login = iSwipe(frame: CGRect.zero)
         self.view.addSubview(login!)
         
         self.view.backgroundColor = UIColor.white
     }
     
     func watchAction() {
-        login?.watchAction(1, login: { (email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-            toast?("ok")
-        }, createAccount: { ( name : String?, email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-            toast?("ok")
-        }, changePwd: { ( email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-            toast?("ok")
-        })
+//        login?.watchAction(1, login: { (email : String?, pwd : String?, toast : ((String?) -> Void)?) in
+//            toast?("ok")
+//        }, createAccount: { ( name : String?, email : String?, pwd : String?, toast : ((String?) -> Void)?) in
+//            toast?("ok")
+//        }, changePwd: { ( email : String?, pwd : String?, toast : ((String?) -> Void)?) in
+//            toast?("ok")
+//        })
     }
 
     

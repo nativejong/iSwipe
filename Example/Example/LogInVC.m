@@ -25,23 +25,23 @@
 
 - (void) watchLogin {
             
-    [self.login watchAction:1 login:^(NSString *usr, NSString *pwd, void (^toast)(NSString *s)) {
-        [self Login:usr pwd:pwd ok:^(NSString *i) {
-            toast(i);
-        } fail:^(NSString *i) {
-            toast(i);
-        }];
-        
-    } createAccount:^(NSString *name, NSString *email, NSString *pwd, void (^toast)(NSString *s)) {
-        
-        [self createUser:name email:email pwd:pwd ok:^(NSString *i) {
-            toast(nil);
-        } fail:^(NSString *i) {
-            toast(nil);
-        }];
-    } changePwd:^(NSString *email, NSString *pwd, void (^toast)(NSString *s)) {
-    
-    }];
+//    [self.login watchAction:1 login:^(NSString *usr, NSString *pwd, void (^toast)(NSString *s)) {
+//        [self Login:usr pwd:pwd ok:^(NSString *i) {
+//            toast(i);
+//        } fail:^(NSString *i) {
+//            toast(i);
+//        }];
+//        
+//    } createAccount:^(NSString *name, NSString *email, NSString *pwd, void (^toast)(NSString *s)) {
+//        
+//        [self createUser:name email:email pwd:pwd ok:^(NSString *i) {
+//            toast(nil);
+//        } fail:^(NSString *i) {
+//            toast(nil);
+//        }];
+//    } changePwd:^(NSString *email, NSString *pwd, void (^toast)(NSString *s)) {
+//    
+//    }];
 }
 
 - (void)viewWillLayoutSubviews{
