@@ -106,8 +106,8 @@ Required software and how to install them.
 
 7. Monitor iLogin activities
 ```sh
-    [self.swipe watch:true currentValue:^void(CGFloat value) {
-        NSLog( @"forget : %f", value );
+    [self.swipe watch:true currentValue:^(CGFloat value) {
+         NSLog( @"forget : %f", value );
     }];
 ```
 
