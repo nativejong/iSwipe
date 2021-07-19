@@ -10,34 +10,32 @@ import UIKit
 import iSwipe
 
 class DemoAViewController: UIViewController {
-    var login : iSwipe?
+    var swipe : iSwipe?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = []
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        login = iSwipe(frame: CGRect.zero)
-        self.view.addSubview(login!)
+        swipe = iSwipe(frame: CGRect.zero)
+        self.view.addSubview(swipe!)
         
         self.view.backgroundColor = UIColor.white
+        
+        self.watchAction()
     }
     
     func watchAction() {
-//        login?.watchAction(1, login: { (email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-//            toast?("ok")
-//        }, createAccount: { ( name : String?, email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-//            toast?("ok")
-//        }, changePwd: { ( email : String?, pwd : String?, toast : ((String?) -> Void)?) in
-//            toast?("ok")
-//        })
+        swipe?.watch(false, currentValue: { ( value : CGFloat )  in
+            print( "value : \(value)"  )
+        })
     }
 
     
     override func viewWillLayoutSubviews() {
         let w = self.view.frame.size.width;
         let h = self.view.frame.size.height;
-        login?.frame = CGRect(x: w * 0.1, y: h * 0.1, width: w * 0.8, height: h * 0.4)
+        swipe?.frame = CGRect(x: w * 0.1, y: h * 0.1, width: w * 0.8, height: h * 0.4)
     }
 
 }

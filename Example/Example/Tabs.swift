@@ -14,13 +14,8 @@ class Tabs: UITabBarController, UITabBarControllerDelegate{
         super.viewDidLoad()
         let demoA = DemoA()
         demoA.tabBarItem = UITabBarItem(title: "Demo A", image: self.resizeImage( s : "man" ), tag: 0 )
-
-        let demoB = DemoB()
-        demoB.tabBarItem = UITabBarItem(title: "Demo B", image: self.resizeImage( s : "man" ), tag: 0 )
-
         
-        
-        self.viewControllers = [demoA, demoB]
+        self.viewControllers = [demoA]
     }
     
     
